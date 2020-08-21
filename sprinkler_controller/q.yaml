@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-binding
+  namespace: cellwize-dev
+  resourceVersion: "55211485"
+  selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/cellwize/rolebindings/admin-binding
+  uid: 2b02b0c2-684e-11ea-b352-525400b9f160
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: red_raccoons
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: cellwize
+- kind: ServiceAccount
+  name: tiller-cellwize-dev
+  namespace: cellwize-dev
